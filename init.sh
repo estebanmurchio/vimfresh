@@ -3,7 +3,10 @@
 clear
 printf "\ninitializing vimfresh"
 
-source ~/.bashrc
+export HOME=~
+source "${HOME}/.vim/scripts/colors.sh"
+source "${HOME}/.vim/scripts/prompt.sh"
+source "${HOME}/.bashrc"
 
 printf "\ndone"
 printf "\n"

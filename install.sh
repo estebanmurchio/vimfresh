@@ -14,7 +14,7 @@ parse_dots() {
 }
 
 copy_vim_folder() {
-    cp -r vim ~/.vim/
+    cp -r vim ~/.vim
 }
 
 parse_dots

@@ -1,20 +1,18 @@
-# .bashrc
-export EDITOR="vim"
-export HISTSIZE="500"
-export HISTCONTROL="ignoreboth"
-export HISTIGNORE="clear:history"
-
-# set -o vi
-
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
 alias ls=' ls -GFh'
 alias ll=' ls -l'
 alias lala=' ls -la'
 alias la=' ls -a'
-
 alias g=' cd ~/Documents/git'
+
+export EDITOR="vim"
+export HISTSIZE="500"
+export HISTCONTROL="ignoreboth"
+export HISTIGNORE="clear:history"
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+export PS1="\033[34m\]❄\[\033[m\] \033[36m\]\u\[\033[37m\] \033[34m\]❄\[\033[m\] \[\033[m\]\w\[\033[m\] \033[34m\]❄\[\033[36m\] \$git_branch\033[31m\] \$git_dirty\033[m\]\n\033[34m\]❄\[\033[m\] "
+#export PS1="\033[34m\]\u\[\033[37m\]@\[\033[m\]\h\[\033[m\] \033[34m\]❄\[\033[m\] \[\033[m\]\w\[\033[m\] \033[34m\]❄\[\033[m\] \$git_branch\033[31m\] \$git_dirty\033[m\]\n\033[34m\]❄\[\033[m\] "
+#export PS1="\[$bldgrn\]\u@\h\[$txtrst\] \w \[$bldylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
+#export PS1="\[$bldgrn\]\u@\h\[$txtrst\] \w \[$bldylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
 
