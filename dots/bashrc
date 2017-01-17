@@ -3,6 +3,7 @@ alias ll=' ls -l'
 alias lala=' ls -la'
 alias la=' ls -a'
 alias g=' cd ~/Documents/git'
+alias i=' source ~/.vim/scripts/colors.sh && source ~/.vim/scripts/prompt.sh'
 
 export EDITOR="vim"
 export HISTSIZE="500"

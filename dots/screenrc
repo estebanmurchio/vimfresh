@@ -5,6 +5,19 @@ attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 defbce on
 
+#backtick 1 0 60 $HOME/.vim/scripts/tick.sh
+
 caption always "%{= kw}%?%-Lw%?%{+b kw}%n*%t%f %?(%u)%?%{= kw}%?%+Lw%?"
-hardstatus alwayslastline "%{kb}* %{kc}%H %{kb}* %{kc}Load: %l %{kb}* %-= %{kb}*%{kc} %c %{kb}*%{kc} %d/%m/%y %{kb}*"
+hardstatus alwayslastline "%{kb}* %{kc}%H %{kb}* %{kc}Load: %l %{kb}* %-= %{kb}*%{kc} %c%{kb}*%{kc} %d/%m/%y %{kb}*"
+
+screen -t git
+screen -t sh
+screen -t vim
+screen -t ssh
+screen -t log
+
+select 4
+select 3
+select 2
+select 1
 
