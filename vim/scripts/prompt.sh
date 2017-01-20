@@ -6,7 +6,7 @@ find_git_branch() {
         fi
         git_branch="$branch"
     else
-        git_branch=""
+        git_branch="-"
     fi
 }
 
@@ -14,9 +14,9 @@ find_git_dirty() {
     local status=$(git status --porcelain 2> /dev/null)
 
     if [[ "$status" != "" ]]; then
-        git_dirty='±'
+        git_dirty=' *'
     else
-        git_dirty=' '
+        git_dirty=''
     fi
 }
 

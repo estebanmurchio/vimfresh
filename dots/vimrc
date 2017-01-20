@@ -1,7 +1,7 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 execute pathogen#infect() 
-call pathogen#helptags()
+Helptags
 
 syntax on
 
@@ -10,6 +10,8 @@ if has("autocmd")
 endif
 
 let mapleader=","
+
+set nocompatible
 
 set hidden
 
@@ -38,6 +40,13 @@ set noerrorbells
 set nobackup
 set noswapfile
 
+set list listchars=eol:¬,tab:⇥\ ,extends:❭,precedes:❬,space:\ ,trail:⚋
+set laststatus=2
+set nohlsearch
+set relativenumber
+set ruler
+set cursorline
+
 no <up> ddkP
 no <down> ddp
 no <left> <nop>
@@ -58,7 +67,4 @@ nmap n nzz
 nmap N Nzz
 nmap } }zz
 nmap { {zz
-
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-set list
 

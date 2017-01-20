@@ -12,7 +12,8 @@ export HISTIGNORE="clear:history"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-export PS1="\033[34m\]❄\[\033[m\] \033[36m\]\u\[\033[37m\] \033[34m\]❄\[\033[m\] \[\033[m\]\w\[\033[m\] \033[34m\]❄\[\033[36m\] \$git_branch\033[31m\] \$git_dirty\033[m\]\n\033[34m\]❄\[\033[m\] "
+#export PS1="\033[34m\]❄\[\033[m\] \033[36m\]\u\[\033[37m\] \033[34m\]❄\[\033[m\] \[\033[m\]\w\[\033[m\] \033[34m\]❄\[\033[36m\] \$git_branch\033[31m\] \$git_dirty\033[m\]\n\033[34m\]❄\[\033[m\] "
+export PS1="\033[34m\]❄\[\033[m\] \u \033[34m\]❄\[\033[m\] \w \033[34m\](\[\033[m\]\$git_branch\033[31m\]\$git_dirty\033[34m\])\[\033[m\] \033[34m\]❄\[\033[m\] "
 #export PS1="\033[34m\]\u\[\033[37m\]@\[\033[m\]\h\[\033[m\] \033[34m\]❄\[\033[m\] \[\033[m\]\w\[\033[m\] \033[34m\]❄\[\033[m\] \$git_branch\033[31m\] \$git_dirty\033[m\]\n\033[34m\]❄\[\033[m\] "
 #export PS1="\[$bldgrn\]\u@\h\[$txtrst\] \w \[$bldylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
 #export PS1="\[$bldgrn\]\u@\h\[$txtrst\] \w \[$bldylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
