@@ -47,6 +47,10 @@ set relativenumber
 set ruler
 set cursorline
 
+let g:solarized_termcolors=16
+set background=dark
+colorscheme solarized
+
 no <up> ddkP
 no <down> ddp
 no <left> <nop>
