@@ -1,6 +1,6 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
-execute pathogen#infect() 
+execute pathogen#infect()
 Helptags
 
 syntax on
@@ -47,9 +47,12 @@ set relativenumber
 set ruler
 set cursorline
 
-let g:solarized_termcolors=16
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts=1
 
 no <up> ddkP
 no <down> ddp
