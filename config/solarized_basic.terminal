@@ -237,7 +237,7 @@
 	<key>CommandString</key>
 	<string>. ~/Documents/git/vimfresh/init.sh</string>
 	<key>ConvertNewlinesOnPaste</key>
-	<true/>
+	<false/>
 	<key>CursorBlink</key>
 	<true/>
 	<key>CursorColor</key>
@@ -323,7 +323,7 @@
 	<key>EastAsianAmbiguousWide</key>
 	<false/>
 	<key>EscapeNonASCIICharacters</key>
-	<true/>
+	<false/>
 	<key>Font</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -357,7 +357,7 @@
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
 	<key>SetLanguageEnvironmentVariables</key>
-	<true/>
+	<false/>
 	<key>ShouldLimitScrollback</key>
 	<integer>1</integer>
 	<key>ShouldRestoreContent</key>
@@ -372,6 +372,8 @@
 	<false/>
 	<key>ShowCommandKeyInTitle</key>
 	<false/>
+	<key>ShowComponentsWhenTabHasCustomTitle</key>
+	<false/>
 	<key>ShowDimensionsInTitle</key>
 	<false/>
 	<key>ShowRepresentedURLInTabTitle</key>
@@ -382,6 +384,8 @@
 	<false/>
 	<key>ShowShellCommandInTitle</key>
 	<false/>
+	<key>ShowTTYNameInTabTitle</key>
+	<false/>
 	<key>ShowTTYNameInTitle</key>
 	<false/>
 	<key>ShowTerminalInDockIcon</key>
@@ -389,7 +393,7 @@
 	<key>ShowWindowSettingsNameInTitle</key>
 	<true/>
 	<key>StrictVTKeypad</key>
-	<true/>
+	<false/>
 	<key>TerminalType</key>
 	<string>xterm-256color</string>
 	<key>TextBoldColor</key>
@@ -552,14 +556,10 @@
 	<false/>
 	<key>columnCount</key>
 	<integer>171</integer>
-	<key>deleteSendsBackspace</key>
-	<false/>
 	<key>name</key>
-	<string>solarized</string>
+	<string>solarized_basic</string>
 	<key>rowCount</key>
 	<integer>48</integer>
-	<key>scrollOnInput</key>
-	<true/>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>

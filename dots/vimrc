@@ -16,12 +16,11 @@ set nocompatible
 set hidden
 
 set nowrap
-set tabstop=4
 set backspace=indent,eol,start
 set autoindent
 set copyindent
 set number
-set shiftwidth=4
+set tabstop=4 shiftwidth=4 expandtab
 set shiftround
 set showmatch
 set ignorecase
@@ -29,6 +28,7 @@ set smartcase
 set smarttab
 set hlsearch
 set incsearch
+set wmnu
 
 set history=500
 set undolevels=1000
@@ -47,12 +47,18 @@ set relativenumber
 set ruler
 set cursorline
 
+set t_Co=256
+
 let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+colorscheme morning
 
-let g:airline_theme='solarized'
+let g:airline_theme='sol'
 let g:airline_powerline_fonts=1
+
+:hi CursorLineNr ctermbg=252 ctermfg=brown
+:hi CursorLine cterm=NONE ctermbg=252 ctermfg=NONE
+:hi Cursor cterm=None ctermbg=brown ctermfg=252
 
 no <up> ddkP
 no <down> ddp
