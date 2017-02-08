@@ -159,8 +159,8 @@
 	<false/>
 	<key>BlinkText</key>
 	<false/>
-	<key>ConvertNewlinesOnPaste</key>
-	<false/>
+	<key>CommandString</key>
+	<string>. ~/Documents/git/vimfresh/init.sh</string>
 	<key>CursorColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -187,6 +187,8 @@
 	<true/>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0499999999999998</real>
+	<key>RunCommandAsShell</key>
+	<false/>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -196,12 +198,8 @@
 	dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KMjpCVoKmxtL3P0tcAAAAAAAABAQAAAAAA
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
-	<key>SetLanguageEnvironmentVariables</key>
-	<false/>
 	<key>ShowWindowSettingsNameInTitle</key>
 	<true/>
-	<key>StrictVTKeypad</key>
-	<false/>
 	<key>TextBoldColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -227,11 +225,11 @@
 	<key>columnCount</key>
 	<integer>120</integer>
 	<key>name</key>
-	<string>solarized_basic</string>
+	<string>solarized_dark</string>
 	<key>rowCount</key>
 	<integer>32</integer>
-	<key>scrollOnInput</key>
-	<false/>
+	<key>shellExitAction</key>
+	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 </dict>
