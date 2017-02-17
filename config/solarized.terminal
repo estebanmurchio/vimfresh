@@ -252,7 +252,7 @@
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
 	<key>CursorType</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>DisableANSIColor</key>
 	<false/>
 	<key>EastAsianAmbiguousWide</key>
@@ -281,7 +281,7 @@
 	<key>RunCommandAsShell</key>
 	<false/>
 	<key>ScrollAlternateScreen</key>
-	<false/>
+	<true/>
 	<key>ScrollbackLines</key>
 	<integer>500</integer>
 	<key>SelectionColor</key>
@@ -322,7 +322,7 @@
 	<key>ShowTTYNameInTitle</key>
 	<false/>
 	<key>ShowTerminalInDockIcon</key>
-	<false/>
+	<true/>
 	<key>ShowWindowSettingsNameInTitle</key>
 	<true/>
 	<key>StrictVTKeypad</key>
@@ -417,19 +417,19 @@
 	<key>UseBoldFonts</key>
 	<true/>
 	<key>UseBrightBold</key>
-	<true/>
+	<false/>
 	<key>VisualBell</key>
 	<false/>
 	<key>columnCount</key>
-	<integer>171</integer>
+	<integer>178</integer>
 	<key>deleteSendsBackspace</key>
 	<false/>
 	<key>name</key>
 	<string>solarized</string>
 	<key>rowCount</key>
-	<integer>48</integer>
+	<integer>47</integer>
 	<key>scrollOnInput</key>
-	<false/>
+	<true/>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>

@@ -61,14 +61,16 @@ let g:syntastic_check_on_wq = 0
 
 let g:solarized_termcolors=256
 set background=dark
-colorscheme morning
+colorscheme peachpuff
 
-let g:airline_theme='sol'
+let g:airline_theme='badcat'
 let g:airline_powerline_fonts=1
 
 :hi CursorLineNr ctermbg=252 ctermfg=brown
 :hi CursorLine cterm=NONE ctermbg=252 ctermfg=NONE
 :hi Cursor cterm=None ctermbg=brown ctermfg=252
+:hi CursorLineNr NONE
+:hi CursorLine NONE
 
 no <up> ddkP
 no <down> ddp
