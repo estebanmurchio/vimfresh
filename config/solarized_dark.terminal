@@ -165,6 +165,8 @@
 	<true/>
 	<key>BookmarkRestorations</key>
 	<true/>
+	<key>CharacterEncoding</key>
+	<integer>4</integer>
 	<key>CommandString</key>
 	<string>. ~/Documents/git/vimfresh/init.sh</string>
 	<key>ConvertNewlinesOnPaste</key>
@@ -190,7 +192,7 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AsAAAAAAAAEBCAAoADXxAeUm9ib3RvTW9ub0ZvclBvd2VybGluZS1SZWd1bGFy
+	YXNzI0AwAAAAAAAAEBCAAoADXxAeUm9ib3RvTW9ub0ZvclBvd2VybGluZS1SZWd1bGFy
 	0hMUFRZaJGNsYXNzbmFtZVgkY2xhc3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tl
 	eWVkQXJjaGl2ZXLRGhtUcm9vdIABCBEaIy0yNzxCS1JbYmlydHZ4mZ6psrm8xdfa3wAA
 	AAAAAAEBAAAAAAAAABwAAAAAAAAAAAAAAAAAAADh
@@ -226,11 +228,15 @@
 	<false/>
 	<key>ShowActivityIndicatorInTab</key>
 	<false/>
+	<key>ShowComponentsWhenTabHasCustomTitle</key>
+	<false/>
 	<key>ShowDimensionsInTitle</key>
 	<false/>
 	<key>ShowRepresentedURLInTabTitle</key>
 	<false/>
 	<key>ShowRepresentedURLInTitle</key>
+	<false/>
+	<key>ShowTTYNameInTabTitle</key>
 	<false/>
 	<key>ShowTTYNameInTitle</key>
 	<false/>
@@ -240,6 +246,8 @@
 	<true/>
 	<key>StrictVTKeypad</key>
 	<false/>
+	<key>TerminalType</key>
+	<string>xterm-256color</string>
 	<key>TextBoldColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS

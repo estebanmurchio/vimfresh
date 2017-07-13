@@ -13,4 +13,11 @@ export HISTIGNORE="clear:history"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-export PS1="\$git_branch\$git_dirty@ \w > "
+if [ -f /usr/local/Cellar/bash-completion/1.3_2/etc/bash_completion ]; then
+   . /usr/local/Cellar/bash-completion/1.3_2/etc/bash_completion
+fi
+
+# j: \j \$\[\e[m\]  \
+p_dir_size=$(du -shc | grep -m 1 total | sed 's/total//' | sed 's/ //')
+export PS1="\n\$?\[$(tput sgr0)\]  \A \$git_branch\$git_dirty j: \j \$\[\e[m\]  \w  "
+
