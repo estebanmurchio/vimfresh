@@ -51,11 +51,11 @@ find_git_dirty() {
 PROMPT_COMMAND=""
 PROMPT_COMMAND="find_git_branch;find_git_dirty;$PROMPT_COMMAND"
 
-SH_ERROR="\[\e[37;41m\] $? \[$(tput sgr0)\]\[\e[31;47m\]\[\e[m\]"
-SH_CLOCK="\[\e[37;41m\] \A \[\e[31;47m\]\[\e[m\]"
-SH_GIT="\[\e[37;41m\] \$git_branch\$git_dirty \[\e[31;47m\]\[\e[m\]"
-SH_CWD="\[\e[37;41m\] \w \[\e[31;47m\]\[\e[m\]"
-SH_UID="\[\e[37;41m\] \$ \[\e[31;47m\]\[\e[m\]"
+SH_ERROR="\[\e[37;44m\] $? \[$(tput sgr0)\]\[\e[34;47m\]\[\e[m\]"
+SH_CLOCK="\[\e[37;44m\] \A \[\e[34;47m\]\[\e[m\]"
+SH_GIT="\[\e[37;44m\] \$git_branch\$git_dirty \[\e[34;47m\]\[\e[m\]"
+SH_CWD="\[\e[37;44m\] \w \[\e[34;47m\]\[\e[m\]"
+SH_UID="\[\e[37;44m\] \$ \[\e[34;47m\]\[\e[m\]"
 
 export PS1="$SH_ERROR$SH_CLOCK$SH_GIT$SH_CWD$SH_UID "
 
