@@ -3,11 +3,15 @@
 #
 #
 ## New Features!
+  - ##### Added and sourced bash_aliases.
   - ##### Removed and merged several scripts into one, now `fresh.sh` does all this tool needs.
   - ##### Added this awesome MD with useful information.
 #
 #
 ### Installation
+##### This script **WILL** overwrite or remove the following files: `~/.vim/`, `~/.bash_aliases`, `~/.bash_logout`, `~/.bash_profile`, `~/.bashrc`, `~/.screenrc` and `~/.vimrc`. If you want to keep your existing set-up as is, **BACKUP THESE FILES** before running this script.
+#
+#
 ```sh
 $ git clone git@github.com:estebanmurchio/vimfresh.git
 $ cd vimfresh
