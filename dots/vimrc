@@ -79,7 +79,7 @@ let g:solarized_termcolors=256
 set background=dark
 colorscheme peachpuff
 
-let g:airline_theme='badcat'
+let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 
 :hi CursorLineNr ctermbg=252 ctermfg=brown
