@@ -237,7 +237,7 @@
 	<key>CharacterEncoding</key>
 	<integer>4</integer>
 	<key>CommandString</key>
-	<string>. ~/Documents/git/vimfresh/init.sh</string>
+	<string></string>
 	<key>ConvertNewlinesOnPaste</key>
 	<false/>
 	<key>CursorBlink</key>
@@ -279,7 +279,7 @@
 	<key>RestoreLines</key>
 	<integer>500</integer>
 	<key>RunCommandAsShell</key>
-	<false/>
+	<true/>
 	<key>ScrollAlternateScreen</key>
 	<true/>
 	<key>ScrollbackLines</key>
@@ -302,9 +302,9 @@
 	<key>ShowActiveProcessArgumentsInTitle</key>
 	<true/>
 	<key>ShowActiveProcessInTabTitle</key>
-	<false/>
+	<true/>
 	<key>ShowActiveProcessInTitle</key>
-	<false/>
+	<true/>
 	<key>ShowActivityIndicatorInTab</key>
 	<false/>
 	<key>ShowCommandKeyInTitle</key>

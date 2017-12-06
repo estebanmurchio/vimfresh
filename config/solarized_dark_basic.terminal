@@ -163,8 +163,10 @@
 	<false/>
 	<key>BlinkText</key>
 	<true/>
+	<key>BookmarkRestorations</key>
+	<false/>
 	<key>CommandString</key>
-	<string>. ~/Documents/git/vimfresh/init.sh</string>
+	<string></string>
 	<key>ConvertNewlinesOnPaste</key>
 	<false/>
 	<key>CursorColor</key>
@@ -193,8 +195,10 @@
 	<true/>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0499999999999998</real>
+	<key>RestoreLines</key>
+	<integer>500</integer>
 	<key>RunCommandAsShell</key>
-	<false/>
+	<true/>
 	<key>ScrollbackLines</key>
 	<integer>500</integer>
 	<key>SelectionColor</key>
@@ -213,9 +217,9 @@
 	<key>ShouldRestoreContent</key>
 	<false/>
 	<key>ShowActiveProcessInTabTitle</key>
-	<false/>
+	<true/>
 	<key>ShowActiveProcessInTitle</key>
-	<false/>
+	<true/>
 	<key>ShowActivityIndicatorInTab</key>
 	<false/>
 	<key>ShowDimensionsInTitle</key>

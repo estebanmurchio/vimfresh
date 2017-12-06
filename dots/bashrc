@@ -1,9 +1,20 @@
-alias ls=' ls -GFh'
-alias ll=' ls -l'
-alias lala=' ls -la'
-alias la=' ls -a'
-alias g=' cd ~/Documents/git'
-alias i=' source ~/.vim/scripts/colors.sh && source ~/.vim/scripts/prompt.sh'
+#!/bin/bash
+
+# VIMFRESH: an easy -hopefully- customization for shell and vim users.
+# Copyright (C) 2017  Esteban Murchio
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 export TERM=xterm-256color
 export EDITOR="vim"
@@ -13,11 +24,37 @@ export HISTIGNORE="clear:history"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-if [ -f /usr/local/Cellar/bash-completion/1.3_2/etc/bash_completion ]; then
-   . /usr/local/Cellar/bash-completion/1.3_2/etc/bash_completion
-fi
+find_git_branch() {
+    local branch
+    if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
+        if [[ "$branch" == "HEAD" ]]; then
+             branch='detached*'
+        fi
+        git_branch="  $branch "
+    else
+        git_branch=""
+    fi
+}
+
+find_git_dirty() {
+    local status=$(git status --porcelain 2> /dev/null)
+    if [[ "$status" != "" ]]; then
+        git_dirty='≠ '
+    else
+        git_dirty=''
+    fi
+}
+
+PROMPT_COMMAND="find_git_branch; find_git_dirty; $PROMPT_COMMAND"
 
 # j: \j \$\[\e[m\]  \
-p_dir_size=$(du -shc | grep -m 1 total | sed 's/total//' | sed 's/ //')
-export PS1="\n\$?\[$(tput sgr0)\]  \A \$git_branch\$git_dirty j: \j \$\[\e[m\]  \w  "
+#p_dir_size=$(du -shc | grep -m 1 total | sed 's/total//' | sed 's/ //')
+#export PS1="\n\$?\[$(tput sgr0)\]  \A \$git_branch\$git_dirty j: \j \$\[\e[m\]  \w  "
 
+SH_ERR="\[\e[37;41m\] \$? \[$(tput sgr0)\]\[\e[31;47m\]\[\e[m\] "
+
+export PS1="$SH_ERR \w: "
+
+if [ -f ~/.prev_dir ]; then
+    cd $(cat ~/.prev_dir)
+fi

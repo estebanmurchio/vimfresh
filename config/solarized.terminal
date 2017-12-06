@@ -237,7 +237,7 @@
 	<key>CharacterEncoding</key>
 	<integer>4</integer>
 	<key>CommandString</key>
-	<string>. ~/Documents/git/vimfresh/init.sh</string>
+	<string></string>
 	<key>ConvertNewlinesOnPaste</key>
 	<true/>
 	<key>CursorBlink</key>
@@ -263,23 +263,23 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AwAAAAAAAAEBCAAoADXxAeUm9ib3RvTW9ub0ZvclBvd2VybGluZS1SZWd1bGFy
-	0hMUFRZaJGNsYXNzbmFtZVgkY2xhc3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tl
-	eWVkQXJjaGl2ZXLRGhtUcm9vdIABCBEaIy0yNzxCS1JbYmlydHZ4mZ6psrm8xdfa3wAA
-	AAAAAAEBAAAAAAAAABwAAAAAAAAAAAAAAAAAAADh
+	YXNzI0AwAAAAAAAAEBCAAoADXxAcTWVzbG9MR1MtUmVndWxhckZvclBvd2VybGluZdIT
+	FBUWWiRjbGFzc25hbWVYJGNsYXNzZXNWTlNGb250ohUXWE5TT2JqZWN0XxAPTlNLZXll
+	ZEFyY2hpdmVy0RobVHJvb3SAAQgRGiMtMjc8QktSW2JpcnR2eJecp7C3usPV2N0AAAAA
+	AAABAQAAAAAAAAAcAAAAAAAAAAAAAAAAAAAA3w==
 	</data>
 	<key>FontAntialias</key>
 	<true/>
 	<key>FontHeightSpacing</key>
 	<real>1</real>
 	<key>FontWidthSpacing</key>
-	<integer>1</integer>
+	<real>1</real>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0499999999999998</real>
 	<key>RestoreLines</key>
 	<integer>500</integer>
 	<key>RunCommandAsShell</key>
-	<false/>
+	<true/>
 	<key>ScrollAlternateScreen</key>
 	<true/>
 	<key>ScrollbackLines</key>
@@ -302,9 +302,9 @@
 	<key>ShowActiveProcessArgumentsInTitle</key>
 	<true/>
 	<key>ShowActiveProcessInTabTitle</key>
-	<false/>
+	<true/>
 	<key>ShowActiveProcessInTitle</key>
-	<false/>
+	<true/>
 	<key>ShowActivityIndicatorInTab</key>
 	<false/>
 	<key>ShowCommandKeyInTitle</key>
