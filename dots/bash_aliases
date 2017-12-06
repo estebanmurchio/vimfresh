@@ -20,3 +20,6 @@ alias ls=' ls -GFh'
 alias ll=' ls -l'
 alias lala=' ls -la'
 alias la=' ls -a'
+
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias cask='brew cask install --appdir="~/Applications" $1'
