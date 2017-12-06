@@ -28,9 +28,9 @@ find_git_branch() {
     local branch
     if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
         if [[ "$branch" == "HEAD" ]]; then
-             branch='detached*'
+             branch="detached*"
         fi
-        git_branch="  $branch "
+        git_branch=" $branch"
     else
         git_branch=""
     fi
@@ -38,22 +38,27 @@ find_git_branch() {
 
 find_git_dirty() {
     local status=$(git status --porcelain 2> /dev/null)
+    git_dirty=""
     if [[ "$status" != "" ]]; then
-        git_dirty='≠ '
+        git_dirty=" ≠"
     else
-        git_dirty=''
+        if [[ "$git_branch" != "" ]]; then
+            git_dirty=""
+        fi
     fi
 }
 
-PROMPT_COMMAND="find_git_branch; find_git_dirty; $PROMPT_COMMAND"
+PROMPT_COMMAND=""
+PROMPT_COMMAND="find_git_branch;find_git_dirty;$PROMPT_COMMAND"
 
-# j: \j \$\[\e[m\]  \
-#p_dir_size=$(du -shc | grep -m 1 total | sed 's/total//' | sed 's/ //')
-#export PS1="\n\$?\[$(tput sgr0)\]  \A \$git_branch\$git_dirty j: \j \$\[\e[m\]  \w  "
+SH_ERROR="\[\e[37;41m\] $? \[$(tput sgr0)\]\[\e[31;47m\]\[\e[m\]"
+SH_CLOCK="\[\e[37;41m\] \A \[\e[31;47m\]\[\e[m\]"
+SH_GIT="\ \$git_branch\$git_dirty\ "
+SH_CWD="\[\e[37;41m\] \w \[\e[31;47m\]\[\e[m\]"
+SH_UID="\[\e[37;41m\] \$ \[\e[31;47m\]\[\e[m\]"
 
-SH_ERR="\[\e[37;41m\] \$? \[$(tput sgr0)\]\[\e[31;47m\]\[\e[m\] "
-
-export PS1="$SH_ERR \w: "
+# export PS1="$SH_ERROR$SH_CLOCK$SH_GIT$SH_CWD$SH_UID "
+export PS1="$SH_ERROR$SH_CLOCK\`if [[ '$git_branch' != '' ]];then echo $SH_GIT;fi\`$SH_CWD$SH_UID "
 
 if [ -f ~/.prev_dir ]; then
     cd $(cat ~/.prev_dir)

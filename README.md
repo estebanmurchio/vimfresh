@@ -12,9 +12,15 @@
 $ git clone git@github.com:estebanmurchio/vimfresh.git
 $ cd vimfresh
 $ git submodule update --init --recursive
+
+# install any patched font from vim/bundle/powerline-fonts/
+# set the patched font as your terminal font
+# alternatively, you could import a terminal profile included in `config/`
+
 $ . fresh.sh --install
+
+# enjoy!
 ```
-  - ##### Don't forget to set a patched font in your terminal.
 #
 #
 ### Help
