@@ -32,7 +32,7 @@ find_git_branch() {
         fi
         git_branch=" $branch"
     else
-        git_branch=""
+        git_branch=" -"
     fi
 }
 
@@ -53,12 +53,11 @@ PROMPT_COMMAND="find_git_branch;find_git_dirty;$PROMPT_COMMAND"
 
 SH_ERROR="\[\e[37;41m\] $? \[$(tput sgr0)\]\[\e[31;47m\]\[\e[m\]"
 SH_CLOCK="\[\e[37;41m\] \A \[\e[31;47m\]\[\e[m\]"
-SH_GIT="\ \$git_branch\$git_dirty\ "
+SH_GIT="\[\e[37;41m\] \$git_branch\$git_dirty \[\e[31;47m\]\[\e[m\]"
 SH_CWD="\[\e[37;41m\] \w \[\e[31;47m\]\[\e[m\]"
 SH_UID="\[\e[37;41m\] \$ \[\e[31;47m\]\[\e[m\]"
 
-# export PS1="$SH_ERROR$SH_CLOCK$SH_GIT$SH_CWD$SH_UID "
-export PS1="$SH_ERROR$SH_CLOCK\`if [[ '$git_branch' != '' ]];then echo $SH_GIT;fi\`$SH_CWD$SH_UID "
+export PS1="$SH_ERROR$SH_CLOCK$SH_GIT$SH_CWD$SH_UID "
 
 if [ -f ~/.prev_dir ]; then
     cd $(cat ~/.prev_dir)
