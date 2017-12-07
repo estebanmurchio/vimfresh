@@ -16,15 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-export TERM=xterm-256color
-export EDITOR="vim"
-export HISTSIZE="500"
-export HISTCONTROL="ignoreboth"
-export HISTIGNORE="clear:history"
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
-find_git_branch() {
+fresh_find_git_branch() {
     local branch
     if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
         if [[ "$branch" == "HEAD" ]]; then
@@ -36,7 +28,7 @@ find_git_branch() {
     fi
 }
 
-find_git_dirty() {
+fresh_find_git_dirty() {
     local status=$(git status --porcelain 2> /dev/null)
     git_dirty=""
     if [[ "$status" != "" ]]; then
@@ -49,7 +41,11 @@ find_git_dirty() {
 }
 
 PROMPT_COMMAND=""
-PROMPT_COMMAND="find_git_branch;find_git_dirty;$PROMPT_COMMAND"
+PROMPT_COMMAND="fresh_find_git_branch;fresh_find_git_dirty;$PROMPT_COMMAND"
+
+if [ -f ~/.prev_dir ]; then
+    cd $(cat ~/.prev_dir)
+fi
 
 SH_ERROR="\[\e[37;44m\] \$? \[$(tput sgr0)\]\[\e[34;47m\]\[\e[m\]"
 SH_CLOCK="\[\e[37;44m\] \A \[\e[34;47m\]\[\e[m\]"
@@ -58,7 +54,10 @@ SH_CWD="\[\e[37;44m\] \w \[\e[34;47m\]\[\e[m\]"
 SH_UID="\[\e[37;44m\] \$ \[\e[34;47m\]\[\e[m\]"
 
 export PS1="$SH_ERROR$SH_CLOCK$SH_GIT$SH_CWD$SH_UID "
-
-if [ -f ~/.prev_dir ]; then
-    cd $(cat ~/.prev_dir)
-fi
+export TERM=xterm-256color
+export EDITOR="vim"
+export HISTSIZE="500"
+export HISTCONTROL="ignoreboth"
+export HISTIGNORE="clear:history"
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad

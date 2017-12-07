@@ -16,10 +16,20 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+function fresh() {
+    local s=$(find ~ -mount -name 'fresh.sh' 2> /dev/null)
+    if [[ "$s" == "" ]]; then
+        printf "VIMFRESH script not found."
+        return 1
+    fi
+    . $s $@
+}
+
+function ckdir() { mkdir $1; cd $1; }
+function brewup() { brew update; brew upgrade; brew prune; brew cleanup; brew doctor; }
+function cask() { brew cask install --appdir="~/Applications" $@; }
+
 alias ls=' ls -GFh'
 alias ll=' ls -l'
 alias lala=' ls -la'
 alias la=' ls -a'
-
-alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
-alias cask='brew cask install --appdir="~/Applications" $1'

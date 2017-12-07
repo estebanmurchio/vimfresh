@@ -16,19 +16,20 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-initialize() {
-    parse_command_parameters $@
+fresh_initialize() {
+    fresh_sh_path=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+    fresh_parse_command_parameters $@
 }
 
-parse_command_parameters() {
-    operation="$1"
-    force=0
+fresh_parse_command_parameters() {
+    local operation="$1"
+    local force=0
     if ! [[ $operation =~ "--" ]]; then
-        show_help
+        fresh_show_help
         return
     fi
     if [[ $@ =~ "-force" ]]; then
-        force=1
+        local force=1
     fi
     printf "
     VIMFRESH  Copyright (C) 2017  Esteban Murchio
@@ -39,35 +40,35 @@ parse_command_parameters() {
     (at your option) any later version.\n"
     case $operation in
         --h|--help)
-            show_help
+            fresh_show_help
         ;;
         --i|--install)
             printf "\nInstalling..."
-            do_install $force
+            fresh_install $force
             printf "Done.\n"
         ;;
         --u|--update)
             printf "\nUpdating..."
-            do_update $force
+            fresh_update $force
             printf "Done.\n"
         ;;
         --s|--source)
             printf "\nSourcing..."
-            do_source $force
+            fresh_source $force
             printf "Done.\n"
         ;;
         --r|--remove)
             printf "\nRemoving..."
-            do_remove $force
+            fresh_remove $force
             printf "Done.\n"
         ;;
         *)
-            show_help
+            fresh_show_help
         ;;
     esac
 }
 
-show_help() {
+fresh_show_help() {
     printf "SYNOPSIS
      fresh [--h | --i | --u | --s | --r] [-force]
 
@@ -96,20 +97,20 @@ NOTE
 \n"
 }
 
-do_install() {
-    for file in dots/*; do
-        cp dots/$(basename $file) ~/.$(basename $file)
+fresh_install() {
+    for file in $fresh_sh_path/dots/*; do
+        cp $fresh_sh_path/dots/$(basename $file) ~/.$(basename $file)
     done
-    cp -r vim ~/.vim
-    do_source
+    cp -r $fresh_sh_path/vim ~/.vim
+    fresh_source
 }
 
-do_update() {
-    do_remove
-    do_install
+fresh_update() {
+    fresh_remove
+    fresh_install
 }
 
-do_source() {
+fresh_source() {
     if [ -f ~/.bashrc ]; then
         . ~/.bashrc
     else
@@ -117,7 +118,7 @@ do_source() {
     fi
 }
 
-do_remove() {
+fresh_remove() {
     if [ -d ~/.vim ]; then
         rm -r ~/.vim
     fi
@@ -141,4 +142,14 @@ do_remove() {
     fi
 }
 
-initialize $@
+fresh_initialize $@
+
+unset fresh_sh_path
+
+unset -f fresh_initialize
+unset -f fresh_parse_command_parameters
+unset -f fresh_show_help
+unset -f fresh_install
+unset -f fresh_update
+unset -f fresh_source
+unset -f fresh_remove
