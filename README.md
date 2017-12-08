@@ -1,6 +1,9 @@
 # VIMFRESH
 ### allows an easy -hopefully- customization for *shell* **and** *vim* users.
 
+![bash](http://i65.tinypic.com/2mebnk.png)
+
+![vim](http://i66.tinypic.com/ve3b7.png)
 
 ## New Features!
   - Added and sourced bash_aliases.
