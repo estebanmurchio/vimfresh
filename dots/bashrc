@@ -1,19 +1,69 @@
-alias ls=' ls -GFh'
-alias ll=' ls -l'
-alias lala=' ls -la'
-alias la=' ls -a'
-alias g=' cd ~/Documents/git'
-alias i=' source ~/.vim/scripts/colors.sh && source ~/.vim/scripts/prompt.sh'
+#!/bin/bash
 
+# VIMFRESH: an easy -hopefully- customization for shell and vim users.
+# Copyright (C) 2017  Esteban Murchio
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+fresh_find_git_branch() {
+    local branch
+    if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
+        if [[ "$branch" == "HEAD" ]]; then
+             branch="detached*"
+        fi
+        git_branch=" $branch"
+    else
+        git_branch=" -"
+    fi
+}
+
+fresh_find_git_dirty() {
+    local status=$(git status --porcelain 2> /dev/null)
+    git_dirty=""
+    if [[ "$status" != "" ]]; then
+        git_dirty=" ≠"
+    else
+        if [[ "$git_branch" != "" ]]; then
+            git_dirty=""
+        fi
+    fi
+}
+
+PROMPT_COMMAND=""
+PROMPT_COMMAND="fresh_find_git_branch;fresh_find_git_dirty;$PROMPT_COMMAND"
+
+if [ -f ~/.prev_dir ]; then
+    cd $(cat ~/.prev_dir)
+fi
+
+SH_ERROR_LIGHT="\[\e[37;44m\] \$? \[$(tput sgr0)\]\[\e[34;47m\]\[\e[m\]"
+SH_CLOCK_LIGHT="\[\e[37;44m\] \A \[\e[34;47m\]\[\e[m\]"
+SH_GIT_LIGHT="\[\e[37;44m\] \$git_branch\$git_dirty \[\e[34;47m\]\[\e[m\]"
+SH_CWD_LIGHT="\[\e[37;44m\] \w \[\e[34;47m\]\[\e[m\]"
+SH_UID_LIGHT="\[\e[37;44m\] \$ \[\e[34;47m\]\[\e[m\]"
+
+SH_ERROR_DARK="\[\e[30;44m\] \$? \[$(tput sgr0)\]\[\e[34;40m\]\[\e[m\]"
+SH_CLOCK_DARK="\[\e[30;44m\] \A \[\e[34;40m\]\[\e[m\]"
+SH_GIT_DARK="\[\e[30;44m\] \$git_branch\$git_dirty \[\e[34;40m\]\[\e[m\]"
+SH_CWD_DARK="\[\e[30;44m\] \w \[\e[34;40m\]\[\e[m\]"
+SH_UID_DARK="\[\e[30;44m\] \$ \[\e[34;40m\]\[\e[m\]"
+
+export PS1="$SH_ERROR_DARK$SH_CLOCK_DARK$SH_GIT_DARK$SH_CWD_DARK$SH_UID_DARK "
+export TERM=xterm-256color
 export EDITOR="vim"
 export HISTSIZE="500"
 export HISTCONTROL="ignoreboth"
 export HISTIGNORE="clear:history"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-
-export PS1="\033[34m\]❄\[\033[m\] \033[36m\]\u\[\033[37m\] \033[34m\]❄\[\033[m\] \[\033[m\]\w\[\033[m\] \033[34m\]❄\[\033[36m\] \$git_branch\033[31m\] \$git_dirty\033[m\]\n\033[34m\]❄\[\033[m\] "
-#export PS1="\033[34m\]\u\[\033[37m\]@\[\033[m\]\h\[\033[m\] \033[34m\]❄\[\033[m\] \[\033[m\]\w\[\033[m\] \033[34m\]❄\[\033[m\] \$git_branch\033[31m\] \$git_dirty\033[m\]\n\033[34m\]❄\[\033[m\] "
-#export PS1="\[$bldgrn\]\u@\h\[$txtrst\] \w \[$bldylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
-#export PS1="\[$bldgrn\]\u@\h\[$txtrst\] \w \[$bldylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
-

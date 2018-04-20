@@ -16,23 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-altscreen on
-startup_message off
-term screen-256color
-attrcolor b ".I"
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-defbce on
+fresh_on_exit() { pwd > ~/.prev_dir; }
 
-caption always "%{= kw}%?%-Lw%?%{+b kw}%n*%t%f %?(%u)%?%{= kw}%?%+Lw%?"
-hardstatus alwayslastline "%{kb}* %{kc}%H %{kb}* %{kc}Load: %l %{kb}* %-= %{kb}*%{kc} %c %{kb}*%{kc} %d/%m/%y %{kb}*"
-
-screen -t git
-screen -t sh
-screen -t vim
-screen -t ssh
-screen -t log
-
-select 4
-select 3
-select 2
-select 1
+trap fresh_on_exit EXIT

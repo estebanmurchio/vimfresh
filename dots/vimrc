@@ -1,7 +1,23 @@
+" VIMFRESH: an easy -hopefully- customization for shell and vim users.
+" Copyright (C) 2017  Esteban Murchio
+"
+" This program is free software: you can redistribute it and/or modify
+" it under the terms of the GNU General Public License as published by
+" the Free Software Foundation, either version 3 of the License, or
+" (at your option) any later version.
+"
+" This program is distributed in the hope that it will be useful,
+" but WITHOUT ANY WARRANTY; without even the implied warranty of
+" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+" GNU General Public License for more details.
+"
+" You should have received a copy of the GNU General Public License
+" along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
-execute pathogen#infect() 
-call pathogen#helptags()
+execute pathogen#infect()
+Helptags
 
 syntax on
 
@@ -11,15 +27,16 @@ endif
 
 let mapleader=","
 
+set nocompatible
+
 set hidden
 
 set nowrap
-set tabstop=4
 set backspace=indent,eol,start
 set autoindent
 set copyindent
 set number
-set shiftwidth=4
+set tabstop=4 shiftwidth=4 expandtab
 set shiftround
 set showmatch
 set ignorecase
@@ -27,6 +44,7 @@ set smartcase
 set smarttab
 set hlsearch
 set incsearch
+set wmnu
 
 set history=500
 set undolevels=1000
@@ -38,6 +56,48 @@ set noerrorbells
 set nobackup
 set noswapfile
 
+set list listchars=eol:¬,tab:⇥\ ,extends:❭,precedes:❬,space:\ ,trail:⚋
+set laststatus=2
+set nohlsearch
+set relativenumber
+set ruler
+set cursorline
+
+set t_Co=256
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_aggregate_errors=1
+"let g:syntastic_python_checkers=['python', 'pylint', 'pep8', 'pep257']
+
+let g:solarized_termcolors=256
+colorscheme peachpuff
+set background=light
+
+let g:airline_theme='molokai'
+"let g:airline_molokai_bg='dark'
+let g:airline_powerline_fonts=1
+
+let g:netrw_banner=0
+let g:netrw_liststyle=0
+"let g:netrw_browse_split=4
+"let g:netrw_preview=1
+"let g:netrw_altv=1
+"let g:netrw_winsize=25
+
+:hi CursorLineNr ctermbg=252 ctermfg=brown
+:hi CursorLine cterm=NONE ctermbg=252 ctermfg=NONE
+:hi Cursor cterm=NONE ctermbg=brown ctermfg=252
+:hi CursorLineNr NONE
+:hi CursorLine NONE
+
+no <tab> :Ex<CR>
 no <up> ddkP
 no <down> ddp
 no <left> <nop>
@@ -58,7 +118,3 @@ nmap n nzz
 nmap N Nzz
 nmap } }zz
 nmap { {zz
-
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-set list
-

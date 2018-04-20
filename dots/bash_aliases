@@ -16,23 +16,20 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-altscreen on
-startup_message off
-term screen-256color
-attrcolor b ".I"
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-defbce on
+function fresh() {
+    local s=$(find ~ -mount -name 'fresh.sh' 2> /dev/null)
+    if [[ "$s" == "" ]]; then
+        printf "VIMFRESH script not found.\nYou can clone the repo @ https://github.com/estebanmurchio/vimfresh.\n"
+        return 1
+    fi
+    . $s $@
+}
 
-caption always "%{= kw}%?%-Lw%?%{+b kw}%n*%t%f %?(%u)%?%{= kw}%?%+Lw%?"
-hardstatus alwayslastline "%{kb}* %{kc}%H %{kb}* %{kc}Load: %l %{kb}* %-= %{kb}*%{kc} %c %{kb}*%{kc} %d/%m/%y %{kb}*"
+function ckdir() { mkdir $1; cd $1; }
+function brewup() { brew update; brew upgrade; brew prune; brew cleanup; brew doctor; }
+function cask() { brew cask install --appdir="~/Applications" $@; }
 
-screen -t git
-screen -t sh
-screen -t vim
-screen -t ssh
-screen -t log
-
-select 4
-select 3
-select 2
-select 1
+alias ls=' ls -GFh'
+alias ll=' ls -l'
+alias lala=' ls -la'
+alias la=' ls -a'
