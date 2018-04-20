@@ -69,26 +69,35 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_python_checkers = ['python', 'pylint', 'pep8', 'pep257']
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_aggregate_errors=1
+"let g:syntastic_python_checkers=['python', 'pylint', 'pep8', 'pep257']
 
 let g:solarized_termcolors=256
-set background=dark
 colorscheme peachpuff
+set background=light
 
-let g:airline_theme='solarized'
+let g:airline_theme='molokai'
+"let g:airline_molokai_bg='dark'
 let g:airline_powerline_fonts=1
+
+let g:netrw_banner=0
+let g:netrw_liststyle=0
+"let g:netrw_browse_split=4
+"let g:netrw_preview=1
+"let g:netrw_altv=1
+"let g:netrw_winsize=25
 
 :hi CursorLineNr ctermbg=252 ctermfg=brown
 :hi CursorLine cterm=NONE ctermbg=252 ctermfg=NONE
-:hi Cursor cterm=None ctermbg=brown ctermfg=252
+:hi Cursor cterm=NONE ctermbg=brown ctermfg=252
 :hi CursorLineNr NONE
 :hi CursorLine NONE
 
+no <tab> :Ex<CR>
 no <up> ddkP
 no <down> ddp
 no <left> <nop>

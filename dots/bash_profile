@@ -16,6 +16,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# Homebrew cask default appdir
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
