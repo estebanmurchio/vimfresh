@@ -16,15 +16,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+export PATH=/usr/local/git/bin:/usr/local/sbin:$PATH
+
 fresh_find_git_branch() {
     local branch
     if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
         if [[ "$branch" == "HEAD" ]]; then
              branch="detached*"
         fi
-        git_branch=" $branch"
+        git_branch=" $branch"
     else
-        git_branch=" -"
+        git_branch=""
     fi
 }
 
@@ -32,7 +34,7 @@ fresh_find_git_dirty() {
     local status=$(git status --porcelain 2> /dev/null)
     git_dirty=""
     if [[ "$status" != "" ]]; then
-        git_dirty=" ≠"
+        git_dirty="*"
     else
         if [[ "$git_branch" != "" ]]; then
             git_dirty=""
@@ -47,19 +49,15 @@ if [ -f ~/.prev_dir ]; then
     cd $(cat ~/.prev_dir)
 fi
 
-SH_ERROR_LIGHT="\[\e[37;44m\] \$? \[$(tput sgr0)\]\[\e[34;47m\]\[\e[m\]"
-SH_CLOCK_LIGHT="\[\e[37;44m\] \A \[\e[34;47m\]\[\e[m\]"
-SH_GIT_LIGHT="\[\e[37;44m\] \$git_branch\$git_dirty \[\e[34;47m\]\[\e[m\]"
-SH_CWD_LIGHT="\[\e[37;44m\] \w \[\e[34;47m\]\[\e[m\]"
-SH_UID_LIGHT="\[\e[37;44m\] \$ \[\e[34;47m\]\[\e[m\]"
+#SH_GIT_LIGHT="\[\e[37;44m\].:. \$git_branch\$git_dirty \[\e[34;47m\].:.\[\e[m\]"
+#SH_CWD_LIGHT="\[\e[37;44m\].:. \w \[\e[34;47m\].:.\[\e[m\]"
+#SH_UID_LIGHT="\[\e[37;44m\].:. \$ \[\e[34;47m\].:.\[\e[m\]"
 
-SH_ERROR_DARK="\[\e[30;44m\] \$? \[$(tput sgr0)\]\[\e[34;40m\]\[\e[m\]"
-SH_CLOCK_DARK="\[\e[30;44m\] \A \[\e[34;40m\]\[\e[m\]"
-SH_GIT_DARK="\[\e[30;44m\] \$git_branch\$git_dirty \[\e[34;40m\]\[\e[m\]"
-SH_CWD_DARK="\[\e[30;44m\] \w \[\e[34;40m\]\[\e[m\]"
-SH_UID_DARK="\[\e[30;44m\] \$ \[\e[34;40m\]\[\e[m\]"
+SH_GIT_DARK="\[\e[33;40m\]\$git_branch\$git_dirty\[\e[m\]"
+SH_CWD_DARK="\[\e[37;40m\]\w\[\e[m\]"
+SH_UID_DARK="\[\e[37;40m\]\$\[\e[m\]"
 
-export PS1="$SH_ERROR_DARK$SH_CLOCK_DARK$SH_GIT_DARK$SH_CWD_DARK$SH_UID_DARK "
+export PS1="$SH_CWD_DARK$SH_GIT_DARK $SH_UID_DARK "
 export TERM=xterm-256color
 export EDITOR="vim"
 export HISTSIZE="500"
