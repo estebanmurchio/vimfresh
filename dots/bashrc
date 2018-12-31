@@ -18,6 +18,8 @@
 
 export PATH=/usr/local/git/bin:/usr/local/sbin:$PATH
 
+alias git='LANG=en_US git'
+
 fresh_find_git_branch() {
     local branch
     if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
@@ -49,13 +51,13 @@ if [ -f ~/.prev_dir ]; then
     cd $(cat ~/.prev_dir)
 fi
 
-#SH_GIT_LIGHT="\[\e[37;44m\].:. \$git_branch\$git_dirty \[\e[34;47m\].:.\[\e[m\]"
-#SH_CWD_LIGHT="\[\e[37;44m\].:. \w \[\e[34;47m\].:.\[\e[m\]"
-#SH_UID_LIGHT="\[\e[37;44m\].:. \$ \[\e[34;47m\].:.\[\e[m\]"
+SH_GIT_DARK="\[\e[33;47m\]\$git_branch\$git_dirty\[\e[m\]"
+SH_CWD_DARK="\[\e[30;47m\]\w\[\e[m\]"
+SH_UID_DARK="\[\e[30;47m\]\$\[\e[m\]"
 
-SH_GIT_DARK="\[\e[33;40m\]\$git_branch\$git_dirty\[\e[m\]"
-SH_CWD_DARK="\[\e[37;40m\]\w\[\e[m\]"
-SH_UID_DARK="\[\e[37;40m\]\$\[\e[m\]"
+#SH_GIT_DARK="\[\e[33;40m\]\$git_branch\$git_dirty\[\e[m\]"
+#SH_CWD_DARK="\[\e[37;40m\]\w\[\e[m\]"
+#SH_UID_DARK="\[\e[37;40m\]\$\[\e[m\]"
 
 export PS1="$SH_CWD_DARK$SH_GIT_DARK $SH_UID_DARK "
 export TERM=xterm-256color
