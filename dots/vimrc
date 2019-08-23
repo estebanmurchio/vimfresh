@@ -80,6 +80,10 @@ let g:solarized_termcolors=256
 colorscheme peachpuff
 set background=light
 
+let g:airline_theme='molokai'
+"let g:airline_molokai_bg='dark'
+let g:airline_powerline_fonts=1
+
 let g:netrw_banner=0
 let g:netrw_liststyle=0
 "let g:netrw_browse_split=4
