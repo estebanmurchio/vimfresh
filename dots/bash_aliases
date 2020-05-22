@@ -26,7 +26,7 @@ function fresh() {
 }
 
 function ckdir() { mkdir $1; cd $1; }
-function brewup() { brew update; brew upgrade; brew prune; brew cleanup; brew doctor; }
+function brewup() { brew update; brew upgrade; brew cleanup; brew doctor; }
 function cask() { brew cask install --appdir="~/Applications" $@; }
 
 alias ls=' ls -GFh'
